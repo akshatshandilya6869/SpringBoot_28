@@ -5,11 +5,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class hell {
-    @GetMapping("akshat")
-    public String hi(){
-        return "hi";
+public class HelloController {
+
+    @GetMapping("/hello/query")
+    public String hello(@RequestParam(name = "name", defaultValue = "World") String name) {
+        return "Hello " + name + " from BridgeLabz";
     }
-
 }
-
